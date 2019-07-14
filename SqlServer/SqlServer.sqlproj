@@ -64,16 +64,16 @@
     <Folder Include="Demos" />
     <Folder Include="Demos\Videos" />
     <Folder Include="Scripts" />
-    <Folder Include="Scripts\IfDemo" />
-    <Folder Include="Scripts\IfDemo\_" />
+    <Folder Include="Scripts\IfEvenOrOdd" />
+    <Folder Include="Scripts\IfEvenOrOdd\_" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demos\Videos\Videos.sql" />
-    <Build Include="Scripts\IfDemo\_\06.If문.sql" />
-    <Build Include="Scripts\IfDemo\_\If문.sql" />
+    <Build Include="Scripts\IfEvenOrOdd\_\06.If문.sql" />
+    <Build Include="Scripts\IfEvenOrOdd\_\If문.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />
-    <None Include="Scripts\IfDemo\IfEvenOrOdd.sql" />
+    <None Include="Scripts\IfEvenOrOdd\IfEvenOrOdd.sql" />
   </ItemGroup>
 </Project>

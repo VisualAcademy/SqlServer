@@ -1,0 +1,76 @@
+Microsoft Windows [Version 6.2.9200]
+(c) 2007 Microsoft Corporation. All rights reserved.
+
+C:\Users\RedPlus>sqlcmd /?
+Microsoft (R) SQL Server 명령줄 도구
+버전 11.0.2100.60 NT x64
+Copyright (c) 2012 Microsoft. All rights reserved.
+
+사용법: Sqlcmd            [-U 로그인 ID]          [-P 암호]
+  [-S 서버]            [-H 호스트 이름]          [-E 트러스트된 연결]
+  [-N 연결 암호화][-C 서버 인증서 신뢰]
+  [-d 데이터베이스 이름 사용] [-l 로그인 제한 시간]     [-t 쿼리 제한 시간]
+  [-h 머리글]           [-s 열 구분 기호]      [-w 화면 너비]
+  [-a 패킷 크기]        [-e 에코 입력]        [-I 따옴표 붙은 식별자 사용]
+  [-c 명령 끝]            [-L[c] 서버 목록 표시[정리 출력]]
+  [-q "명령줄 쿼리"]   [-Q "명령줄 쿼리" 후 끝내기]
+  [-m 오류 수준]        [-V 심각도]     [-W 후행 공백 제거]
+  [-u 유니코드 출력]    [-r[0|1] 일반 오류에 대한 메시지]
+  [-i 입력 파일]         [-o 출력 파일]        [-z 새 암호]
+  [-f <코드 페이지> | i:<코드 페이지>[,o:<코드 페이지>]] [-Z 새 암호 설정 후 끝
+내기]
+  [-k[1|2] 제어 문자 제거[바꾸기]]
+  [-y 변수 길이 유형 표시 너비]
+  [-Y 고정 길이 유형 표시 너비]
+  [-p[1] 통계 인쇄[콜론 형식]]
+  [-R 클라이언트 국가별 설정 사용]
+  [-K 응용 프로그램 내재]
+  [-M 다중 서브넷 장애 조치(Failover)]
+  [-b 오류 시 일괄 처리 중단]
+  [-v 변수 = "값"...]  [-A 관리자 전용 연결]
+  [-X[1] 명령, 시작 스크립트, 환경 변수 비활성화 [및 종료]]
+  [-x 변수 대체 비활성화]
+  [-? 구문 요약 표시]
+
+C:\Users\RedPlus>hostname
+VisualAcademy
+
+C:\Users\RedPlus>sqlcmd -H VisualAcademy -S . -d master
+1> select '안녕하세요';
+2> go
+
+----------
+안녕하세요
+
+(1개 행 적용됨)
+1> select '안녕하세요';
+2> select '반갑습니다';
+3> go
+
+----------
+안녕하세요
+
+(1개 행 적용됨)
+
+----------
+반갑습니다
+
+(1개 행 적용됨)
+1> exit
+
+C:\Users\RedPlus>sqlcmd -H VisualAcademy -S . -d master -Q "select 'Hello';"
+
+-----
+Hello
+
+(1개 행 적용됨)
+
+C:\Users\RedPlus>sqlcmd -H VisualAcademy -S . -d master -q "select 'Hello';"
+
+-----
+Hello
+
+(1개 행 적용됨)
+1> exit
+
+C:\Users\RedPlus>

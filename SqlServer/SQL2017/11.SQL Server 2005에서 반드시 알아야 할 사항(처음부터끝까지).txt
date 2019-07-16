@@ -1,0 +1,23 @@
+* SQL Server 2005에서 반드시 알아야 할 사항
+
+1. 설치/제거
+	SSMS
+2. 데이터베이스
+	MyDB
+3. 로그인사용자
+	MyID, MyPwd
+4. UDL파일
+	MyDB.UDL
+5. 테이블
+	Memos
+6. SQL 구문
+	Create/Alter/Drop/Insert/Select/Update/Delete
+7. T-SQL
+	변수/연산자/제어문
+8. SQL 개체 : Table/View/Stored Procedure/Index/...
+	Create Proc ...
+9. DTS : ZipCode.txt -> ZipCode 테이블로 이동
+	ZipCode 테이블
+10.  백업/복원
+	MyDB.bak
+

@@ -1,0 +1,26 @@
+-- 집계 함수
+
+-- 샘플 테이블
+Create Table dbo.Score
+(
+	Num Int Identity(1, 1) Primary Key, -- 일련번호
+	Kor Int Not Null,					-- 국어점수
+	Eng Int Not Null					-- 영어점수
+)
+Go
+
+-- 샘플 데이터 입력
+Insert Score Values(100, 90)
+Insert Score Values(80, 75)
+Insert Score Values(85, 90)
+
+-- 전체 출력
+Select * From Score
+Go
+
+-- 국어점수 짝수 점수의 총점/평균/카운트
+Select Sum(Kor) From Score Where Kor % 2 = 0	-- Sum() : 합계
+Select Count(Kor) From Score Where Kor % 2 = 0	-- Count() : 건수
+Select Avg(Kor) From Score Where Kor % 2 = 0	-- Avg() : 평균
+Select Max(Kor) From Score -- Max() : 최대값
+Select Min(Kor) From Score -- Min() : 최소값

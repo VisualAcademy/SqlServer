@@ -1,0 +1,93 @@
+-- 사용자 정의 함수
+-- Hap(3, 5) -> 8과 같이 합을 구하는 간단한 함수
+Create Function dbo.Hap(@a Int, @b Int)
+Returns Int -- 반환값에 대한 데이터 형식
+As
+	Begin
+		--[1] Input
+		Declare @result Int
+		--[2] Process
+		Set @result = @a + @b
+		--[3] Output
+		Return @result
+	End
+Go
+-- 함수 호출
+Select dbo.Hap(3, 5) As 합
+Go
+
+-- 이미 있는 기능 모방
+Select Power(2, 10) -- 2 ^ 10 = 1024
+Go
+-- MyPower() 함수 설계
+Create Function MyPower(@n Int, @c Int)
+Returns Int
+As
+	Begin
+		Declare @result Int
+		Set @result = 1
+		Declare @i Int
+		Set @i = 1
+		While @i <= @c
+		Begin
+			Set @result = @result * @n
+			Set @i = @i + 1  
+		End
+		Return @result
+	End 
+Go
+
+Select dbo.MyPower(2, 20) -- 1024
+Go
+-- 이미 있는 기능 모방
+Select Abs(-10) 
+Go
+-- MyAbs() 함수를 설계
+Create Function dbo.MyAbs(@n Int)
+Returns Int
+As
+	Begin
+		Declare @result Int
+		If @n <0
+		Begin
+			Set @result = -@n
+		End
+		Else
+		Begin
+			Set @result = @n
+		End	
+		Return @result
+	End
+Go
+-- 아래 기능 구현이 되도록  
+Select dbo.MyAbs(-10)
+Go
+Select dbo.MyAbs(10)
+Go
+
+-- 함수 응용
+-- 함수 설계 : 1부터 넘겨온 수까지 짝수의 합
+Create Function dbo.Even(@n Int)
+Returns Int
+As
+	Begin
+		Declare @sum Int
+		Set @sum = 0
+		Declare @i Int
+		Set @i = 1
+		While @i <= @n
+		Begin
+			If @i % 2 = 0
+			Begin
+				Set @sum = @sum + @i
+			End
+			Set @i = @i + 1
+		End
+		Return @sum
+	End
+Go
+-- 함수 실행
+Select dbo.Even(10) -- 30
+Select dbo.Even(100) -- 2550
+
+

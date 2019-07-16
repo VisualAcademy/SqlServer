@@ -1,0 +1,52 @@
+* SQL Server 2005에서 반드시 알아야 할 사항(개발자)
+
+1. 설치/제거
+	SQL Server 2005 : (local)
+	SQL Server 2005 Express : (local)\SQLEXPRESS
+	SQL Server 2005 : (local)\SQL2005
+2. 데이터베이스 : 데이터 및 관련 정보가 저장되는 공간
+	데이터명: MyDatabase
+	사이즈 : 3MB -> 0.3MB -> 30MB
+	확장 : *.MDF, *.LDF, *.NDF	
+3. 로그인사용자 : 원격에서 앞서 만들어놓은 데이터베이스에 접속하고자할 때 필요한 계정
+	아이디 : MyUid
+	암호 : MyPwd
+	권한 : db_owner 	
+4. OLE DB 설정(UDL파일) : 데이터베이스에 연결 테스트 및 데이터베이스 연결 문자열 생성
+	Server / Data Source / 서버 : (local), REDPLUSNOTEBOOK
+	Database / Intial Catalog / 데이터베이스 : MyDatabase
+	Uid / User ID / 아이디 : MyUid
+	Pwd / Password / 암호 : MyPwd	
+5. 테이블 : 실제로 데이터가 저장되는 공간(그릇), 표 형태로 저장, 관계형 데이터베이스
+	테이블 : 행/열, Row/Column, Record/Field
+	테이블명 : Memos
+		번호, 이름, 이메일, 간단메모(제목), 작성일, IP주소
+6. SQL 구문 : 
+	DDL(데이터기술언어/데이터정의언어) : Create/Alter/Drop 
+	DML(데이터조작언어) : Insert/Select/Update/Delete
+7. T-SQL : SQL문 내에서의 프로그래밍 문법 : 변수/연산자/제어문(If/While)
+	1부터 100까지 3의 배수 또는 4의 배수의 합을 구하는 프로그램 T-SQL 구현하시오.
+8. SQL 개체(Object) : Table/View/[Stored Procedure]/Index/...
+	입력 : AddMemo
+	출력 : GetMemos
+	상세 : GetMemo
+	수정 : EditMemo
+	삭제 : DeleteMemo
+	검색(동적) : FindMemos
+	검색(정적) : SearchMemos
+9. DTS(데이터변환서비스) : 원격 SQL Server -> 로컬 SQL Server
+10. 백업/복원
+
+
+
+
+
+
+
+
+
+
+
+
+
+

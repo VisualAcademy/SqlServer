@@ -1,0 +1,9 @@
+
+-- 오프라인 상태로 변경
+Alter Database Silverlight Set OffLine
+
+-- 물리적인 파일인 MDF/LDF/NDF 파일을 백업
+
+-- 온라인 상태로 변경
+Alter Database Silverlight Set OnLine
+

@@ -1,0 +1,53 @@
+* SQL Server에서 반드시 알아야 할 사항 10가지
+
+1. 설치 / 제거
+	- SQL Server 다운로드 및 설치
+	- SQL Server 인스턴스명(서버명)
+		- (local)
+		- (local)\SQLEXPRESS
+
+2. 데이터베이스 관리: 데이터 및 관련 정보가 저장되는 공간(캐비넷/파일/그릇)
+	- 데이터베이스 이름: MyDatabase
+	- 사이즈
+	- 확장자
+
+3. 로그인 사용자: SQL Server에 접근 가능한 계정(특정한 데이터베이스의 주인을 만들어 주는 것)
+	- 데이터베이스의 주인: sa / ****
+	- 원격에서 데이터베이스에 접속하고자할 때 필요한 계정
+	- 아이디/암호: MyUid/MyPwd
+	- 권한: db_owner
+
+4. 원격 접속 테스트(UDL 파일을 통한 OLE DB 설정): 데이터베이스에 연결 테스트 및 데이터베이스 연결 문자열 생성
+	- Server / Data Source
+		서버: (local)
+	- Database / Initial Catalog
+		MyDatabase
+	- Uid / User ID
+		MyUid
+	- Pwd / Password
+		MyPwd
+
+5. 테이블: 표 형태로 실제로 데이터가 저장되는 공간(그릇) => 관계형 데이터베이스
+	테이블: 행/열, Row/Column, Record/Field, 가로/세로, 튜플/애트리뷰트
+	테이블명: Memos
+
+6. SQL 구문
+	DDL(데이터 기술 언어/데이터 정의 언어): Create/Alter/Drop
+		Create(구조 생성), Alter(구조 수정), Drop(구조 삭제)
+	DML(데이터 조작 언어): Insert/Select/Update/Delete
+		Insert(삽입/입력)/Select(출력/조회)/Update(수정/갱신)/Delete(삭제)		
+
+7. T-SQL: 데이터베이스내에서의 프로그래밍 문법: 변수/연산자/제어문
+	Declare, Set, If, While, ...
+
+8. SQL 개체(Object): 
+	Table, View, [Stored Procedure], Index, Function, Transaction, Trigger, ...
+
+9. DTS(데이터 변환 서비스): 
+	원격 SQL Server <-> 로컬 SQL Server
+
+10. 백업 및 복원
+
+
+
+

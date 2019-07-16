@@ -1,0 +1,64 @@
+--[1] SP연습용 DB 생성
+Use Master
+GO
+CREATE DATABASE StudyStoredProcedure
+GO
+Use StudyStoredProcedure
+GO
+--[2] SP연습용 Table생성
+Create Table [dbo].[Products]
+(
+	[ProductID] int identity (1, 1) PRIMARY KEY NOT NULL ,
+	[CategoryID] int NOT NULL ,
+	[ModelNumber] varchar (50) ,
+	[ModelName] varchar (50) ,
+	[ProductImage] varchar (50) ,
+	[UnitCost] money NOT NULL ,
+	[Description] varchar (3800)
+)
+GO
+Create Table [dbo].[OrderDetails]
+(
+	[OrderID] int NOT NULL ,
+	[ProductID] int NOT NULL ,
+	[Quantity] int NOT NULL ,
+	[UnitCost] money NOT NULL
+)
+GO
+Insert Products Values(1,'COM01','플러스컴퓨터','image.gif',1000,'좋은 컴퓨터입니다.')
+Insert OrderDetails Values(1,1,1,1000)
+--[3] SP만들기 : 가장 많이 팔린 상위 5개 제품 검색
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+Create Procedure ProductsMostPopular
+WITH ENCRYPTION
+As
+Select top 5 
+	OrderDetails.ProductID, 
+	SUM(OrderDetails.Quantity) As TotalNum, 
+	Products.ModelName 
+From 
+	OrderDetails INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID
+Group By 
+	OrderDetails.ProductID, Products.ModelName
+Order By
+	TotalNum DESC
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+--[4] SP실행(Exec 또는 Execute 구문을 빼고 저장 프로시저명만으로도 실행됨)
+ProductsMostPopular
+--[5] SP삭제
+Drop Procedure ProductsMostPopular
+--[6] 연습용 테이블 삭제
+Drop Table Products
+Drop Table OrderDetails
+--[7] 연습용 DB 삭제
+Use Master
+Go
+Drop DataBase StudyStoredProcedure
+Go

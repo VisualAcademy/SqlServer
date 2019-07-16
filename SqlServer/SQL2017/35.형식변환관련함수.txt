@@ -1,0 +1,13 @@
+-- 형식 변환 관련 함수
+--[0] 에러 발생
+--Select 1234 + '안녕'
+--[1] 정수형 -> 문자열
+Select '1234' + '안녕'
+--[2] 정수형 -> 문자열
+Select Str(1234) + '안녕'
+--[3] Cast(As)
+Select Cast(1234 As VarChar) + '안녕'
+Select Cast(1234 As VarChar(10)) + '안녕'
+--[4] Convert(,)
+Select Convert(VarChar, 1234) + '안녕'
+Select Convert(VarChar(10), 1234) + '안녕'

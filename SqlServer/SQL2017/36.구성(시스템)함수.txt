@@ -1,0 +1,8 @@
+-- 구성(시스템) 함수
+Select @@ServerName -- 현재 SQL Server의 이름
+
+Select @@Version	-- 현재 버전
+
+Select @@Language	-- 현재 언어
+
+Select @@ServiceName -- 서비스명(SQL 이름)

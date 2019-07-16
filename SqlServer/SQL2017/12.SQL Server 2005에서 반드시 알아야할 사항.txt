@@ -1,0 +1,74 @@
+* ASP.NET 학습시 필요한 프로그램 목록
+
+1. Windows Server : OS
+	Windows Server 2000
+	Windows Server 2003
+	Windows Server 2003 R2
+	Windows Vista
+	Windows Server Longhorn
+2. SQL Server : DBMS
+	SQL Server 2000
+	SQL Server 2005
+	SQL Server 2005 Express : Free		
+3. Visual Studio : C#/ASP.NET
+	Visual Studio 2002/2003
+	Visual Studio 2005
+	Visual Studio 2005 Express : Free
+
+* SQL Server 2005에서 반드시 알아야할 사항
+
+SQL Server : DBMS(Database Management System)
+
+목표:
+	내가 간단한 주소를 저장하는 기능을 사용하고자 한다.
+	주소록 : (일련번호/이름/휴대폰/전화번호/주소/이메일)
+
+1. 설치/제거
+	SQL Server 2005 Express
+	http://www.microsoft.com/korea/msdn/vstudio/express/sql/
+2. 데이터베이스 : 데이터가 저장되는 공간(파일/그릇)
+	데이터베이스 이름 : Address	
+3. 로그인 사용자 : 데이터베이스 주인(해당 데이터베이스 접속 계정) : sa/****
+	Address 데이터베이스 로그인할 수 있는 사용자 : 
+	UID : AddressID
+	PWD : AddressPwd
+4. 원격접속(UDL파일) : 데이터베이스 접속 테스트 
+	-> 프로그래밍 언어 사용 데이터베이스 문자열
+	Address.txt -> Address.UDL 파일확장자 변경
+5. 테이블 : 표 형태로 실제로 데이터가 저장되는 공간
+	주소록 테이블 : Address
+		번호 : Num
+		이름 : Name
+		휴대폰 : Mobile
+		전화 : Phone
+		주소 : AddressDetail
+		이메일 : Email
+6. SQL 구문 : 
+	DDL : Create(구조 생성), Alter(구조 수정), Drop(구조 삭제)
+	DML : Insert(삽입), Select(출력), Update(수정), Delete(삭제)		
+7. T-SQL 문법 : 데이터베이스내에서의 프로그래밍
+8. 데이터베이스 개체(Object)
+	저장 프로시저(Stored Procedure) : 프로그램 명령어 집합체
+	인덱스(Index)
+	함수(Function)
+	뷰(View), 트랜젝션(Transaction), 트리거(Trigger), etc
+9. DTS : 데이터변환서비스 : 로컬 <-> 원격
+10. 백업/복원
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

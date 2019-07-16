@@ -67,6 +67,7 @@
     <Folder Include="Scripts\IfEvenOrOdd" />
     <Folder Include="Scripts\IfEvenOrOdd\_" />
     <Folder Include="SQL2017" />
+    <Folder Include="PostgreSQL" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demos\Videos\Videos.sql" />
@@ -167,5 +168,6 @@
     <None Include="SQL2017\Select반환과OUTPUT반환과RETURN반환비교_SQL2008.txt" />
     <None Include="SQL2017\SQL Server에서 반드시 알아야 할 사항 10가지.txt" />
     <None Include="SQL2017\SQLCMD명령어사용법설명.txt" />
+    <None Include="PostgreSQL\01_PostgreSqlStart.sql" />
   </ItemGroup>
 </Project>

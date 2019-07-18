@@ -1,0 +1,85 @@
+-- 저장프로시저(Stored Procedure) : 
+--	i. SQL 내에서의 프로그래밍 기법
+--	ii. 긴 SQL문을 짧은 저장프로시저명으로 대체
+
+--[1] SP연습용 DB 생성
+Use Master
+GO
+
+CREATE DATABASE StudyStoredProcedure
+GO
+
+Use StudyStoredProcedure
+GO
+
+--[2] SP연습용 Table생성
+Create Table [dbo].[Categories]
+(
+	[CategoryID] int IDENTITY (1, 1) PRIMARY KEY NOT NULL ,
+	[CategoryName] varchar (50)
+)
+GO
+
+Create Table [dbo].[Customers]
+(
+	[CustomerID] int IDENTITY (1, 1) PRIMARY KEY NOT NULL ,
+	[FullName] varchar (50) ,
+	[EmailAddress] varchar (50) ,
+	[Password] varchar (50)
+)
+GO
+
+Insert Categories Values('Computer')
+Insert Categories Values('Audio')
+Insert Customers Values('용준','redplus@redplus.net','1234')
+Insert Customers Values('지호','rednuke@redplus.net','1234')
+
+--[3] SP만들기 : Categories/Customers테이블에서 모든 정보를 Select하는 SP생성
+Create Procedure CustomerList
+As
+	Select CustomerID, FullName, EmailAddress, Password From Customers
+GO
+
+Create Proc dbo.CategoryList -- dbo.과 같이 권한 이름 붙여주는 것 권장
+As
+	Select CategoryID, CategoryName From Categories Order By CategoryName ASC
+GO
+
+--[4] SP실행(EXECUTE 또는 EXEC로 실행시킬 수 있다.)
+EXECUTE CustomerList
+EXEC  CategoryList
+CustomerList -- 생략가능
+
+--[5] SP수정
+Alter Procedure CustomerList
+As
+	Select CustomerID, FullName, EmailAddress From Customers
+Go
+
+--[6] SP 구문 조회 : sp_helptext라는 시스템 저장 프로시저 사용
+-- (Ctrl+T키를 눌러 텍스트모드로 확인)
+sp_helptext CustomerList
+
+--[7] SP 구문 암호화 : sp_helptext로 조회해도 생성 구문이 나타나지 않음.
+Alter Procedure CustomerList
+WITH ENCRYPTION
+As
+	Select CustomerID, FullName, EmailAddress From Customers
+Go
+
+sp_helptext CustomerList -- 개체 'CustomerList'의 텍스트가 암호화되었습니다.
+
+--[8] SP삭제
+Drop Procedure dbo.CustomerList
+Drop Proc CategoryList -- Procedure -> Proc로 줄여서 표현
+
+--[9] 연습용 테이블 삭제
+Drop Table Customers
+Drop Table Categories
+
+--[10] 연습용 DB 삭제
+Use Master
+Go
+
+Drop DataBase StudyStoredProcedure
+GO

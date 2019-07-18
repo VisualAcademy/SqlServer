@@ -1,0 +1,30 @@
+SQL Server 2017 Developer 버전 다운로드 및 설치
+
+	1. 다운로드
+		a. 구글: SQL Server 2017 다운로드
+			i. https://www.microsoft.com/ko-kr/sql-server/sql-server-downloads
+	2. 데이터베이스 엔진
+		a. SQL Server Developer Edition
+	3. 데이터베이스 관리도구
+		a. SQL Server Management Studio
+	4. 인스턴스 이름
+		a. SURFACEPRO\MSSQLSERVER01
+		b. (local)
+		c. .
+		d. .\MSSQLSERVER01
+		e. (localdb)\mssqllocaldb
+		f. 127.0.0.1
+	5. 데이터베이스 연결 문자열
+
+
+Server: Data Source: 
+Database: Intial Catalog:
+User ID: UID:
+Password: PWD: 
+
+"server=.\MSSQLSERVER01;database=Test;uid=sa;pwd=1234;"
+"server=(localdb)\mssqllocaldb;database=DotNetNote;Integrated Security=true;"
+
+		
+		
+		

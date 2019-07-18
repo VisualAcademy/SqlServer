@@ -1,0 +1,68 @@
+--[!] Output과 Return 키워드
+
+--[1] 샘플 테이블 생성
+Create Table dbo.Products
+(
+	ProductID Int Identity(1, 1) Primary Key,	-- 일련번호
+	ModelName VarChar(25) Not Null,				-- 상품명
+	SellPrice Int Null							-- 판매가
+)
+Go
+
+--[2] 예시문 입력
+Insert Into Products Values('좋은책', 5000);
+Insert Into Products Values('좋은컴퓨터', 10000);
+Insert Into Products Values('좋은냉장고', 9000);
+
+--[3] 상품의 가격을 2배로 업데이트, 업데이트된 레코드의 개수를 반환
+Create Proc UpdateSellPrice
+	@ProductID Int,
+	@RecordCount Int OUTPUT -- 결과값을 리턴, 초기화하지 않은채 변수값만 전달
+As
+	Update Products Set SellPrice = SellPrice * 2 Where ProductID > @ProductID	
+	Set @RecordCount = (Select @@ROWCOUNT) -- 현재 프로시저내에서 업데이된 레코드 개수
+Go
+--Exec UpdateSellPrice 1, 1
+--Go
+Select * From Products
+GO
+Declare @RecordCount Int
+-- Set @RecordCount = 0
+Exec UpdateSellPrice 1, @RecordCount Output
+Select @RecordCount
+Go
+
+--[4] Products 테이블에 있는 모든 레코드의 개수 반환
+--[a]
+Select COUNT(*) From Products;
+--[b]
+Create Proc GetProductCount
+As
+	Select COUNT(*) From Products;
+Go
+Execute GetProductCount -- 결과값을 레코드셋, 스칼라값(집계함수)
+Go
+--[c]
+Create Proc GetProductCountUp
+	@RecordCount Int Output
+As
+	Select @RecordCount = COUNT(*) From Products;
+GO
+Declare @RecordCount Int
+Exec GetProductCountUp @RecordCount OUTPUT
+Select @RecordCount 
+Go
+
+--[5] 상품의 가격을 반값으로 조정한 후 영향받은 레코드 수 반환(Return)
+Create Proc UpdateSellPriceHalf
+	@ProductID Int 
+As
+	Update Products Set SellPrice = SellPrice / 2 Where ProductID > @ProductID
+
+	--Select @@ROWCOUNT 
+	Return @@ROWCOUNT
+Go
+Declare @RecordCount Int
+Exec @RecordCount = UpdateSellPriceHalf 1
+Select @RecordCount
+Go

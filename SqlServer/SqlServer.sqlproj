@@ -68,6 +68,8 @@
     <Folder Include="Scripts\IfEvenOrOdd\_" />
     <Folder Include="SQL2017" />
     <Folder Include="PostgreSQL" />
+    <Folder Include="Demos\SP" />
+    <Folder Include="Demos2" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demos\Videos\Videos.sql" />
@@ -149,6 +151,52 @@
     <None Include="Demos\만능_페이징_소팅.sql" />
     <None Include="Demos\중복 데이터 가져오기.sql" />
     <Build Include="dbo\Tables\Logs.sql" />
+    <Build Include="dbo\Tables\Categories.sql" />
+    <Build Include="dbo\Tables\Questions.sql" />
+    <Build Include="dbo\Tables\Tables.sql" />
+    <Build Include="dbo\Stored Procedures\ProductCategoryList.sql" />
+    <None Include="Demos2\01_07_Logs.sql" />
+    <None Include="Demos2\01_09_VisualAcademy_Courses.sql" />
+    <None Include="Demos2\01_11_Schedules.sql" />
+    <None Include="Demos2\01_12_Schedule_SQL.sql" />
+    <None Include="Demos2\02_03_MyDatabase.sql" />
+    <None Include="Demos2\06_02_AttachFiles_01.sql" />
+    <None Include="Demos2\06_03_SQL문1.sql" />
+    <None Include="Demos2\06_03_SQL문2.sql" />
+    <None Include="Demos2\06_03_SQL문3.sql" />
+    <None Include="Demos2\06_03_SQL문3_2.sql" />
+    <None Include="Demos2\06_03_SQL문3_3.sql" />
+    <None Include="Demos2\06_03_SQL문3_4.sql" />
+    <None Include="Demos2\06_05_전체 쿼리문 연습.sql" />
+    <None Include="Demos2\06_07_테이블별칭_TableAlias_.sql" />
+    <None Include="Demos2\06_08_대괄호를사용하여개체명호출시범위를설정할수있음_DeLimit_.sql" />
+    <None Include="Demos2\06_10_Where절.sql" />
+    <None Include="Demos2\06_11_Top키워드.sql" />
+    <None Include="Demos2\06_12_GroupBy절_Having절.sql" />
+    <None Include="Demos2\06_13_OFFSET-FETCH필터.sql" />
+    <None Include="Demos2\07_02_AttachFiles_02.sql" />
+    <None Include="Demos2\07_05_T-SQL-If문.sql" />
+    <None Include="Demos2\07_06_CASE 표현식.sql" />
+    <None Include="Demos2\07_07_ExecPrint.sql" />
+    <None Include="Demos2\08_04_AttachFiles_05.sql" />
+    <None Include="Demos2\08_09_저장 프로시저_SQL Server 내에서의 프로그래밍 개체.sql" />
+    <None Include="Demos2\08_10_참고_Categories 테이블을 기반으로 저장 프로시저 만들기 연습.sql" />
+    <None Include="Demos2\08_13_SP_OUTPUT.sql" />
+    <None Include="Demos2\09_03_MarketSetup.sql" />
+    <None Include="Demos2\14_01_JoinDemo.sql" />
+    <None Include="Demos2\16_01_Index_CI.sql" />
+    <None Include="Demos2\16_02_Index_NCI.sql" />
+    <None Include="Demos2\ArticlesGetAritlcesByRefNumber.sql" />
+    <None Include="Demos2\ArticlesGetArticleByNum.sql" />
+    <None Include="Demos2\ArticlesGetChildAritlcesByRefAndNum.sql" />
+    <None Include="Demos2\AtTimeZone.sql" />
+    <None Include="Demos2\Categories.sql" />
+    <None Include="Demos2\GetBoardListData.sql" />
+    <None Include="Demos2\GetTableNameDynamically.sql" />
+    <None Include="Demos2\OneToMany.sql" />
+    <None Include="Demos2\SignBases_ChatBases.sql" />
+    <None Include="Demos2\TableCopy.sql" />
+    <None Include="Demos2\데이터 가져오기_우편번호 데이터.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />
@@ -178,5 +226,14 @@
     <None Include="SQL2017\SQL Server에서 반드시 알아야 할 사항 10가지.txt" />
     <None Include="SQL2017\SQLCMD명령어사용법설명.txt" />
     <None Include="PostgreSQL\01_PostgreSqlStart.sql" />
+    <None Include="Demos\SP\DeleteBoardAndData.sql" />
+    <None Include="Demos2\00_00_SQL Server 2017 Developer 버전 다운로드 및 설치.txt" />
+    <None Include="Demos2\01_01_SQL Server에서 반드시 알아야 할 사항 10가지 소개.txt" />
+    <None Include="Demos2\02_05_참고_SQL CMD 명령어 살펴보기.txt" />
+    <None Include="Demos2\05_02_CreateAlterDrop테이블.txt" />
+    <None Include="Demos2\06_04_Select 문 관련 주요 키워드 정리.txt" />
+    <None Include="Demos2\08_11_저장프로시저예제1.txt" />
+    <None Include="Demos2\08_12_저장프로시저예제2.txt" />
+    <None Include="Demos2\08_14_Select반환과 OUTPUT반환과 RETURN반환 비교.txt" />
   </ItemGroup>
 </Project>

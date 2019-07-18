@@ -140,6 +140,14 @@
     <None Include="SQL2017\테이블제약조건.sql" />
     <None Include="SQL2017\트랜잭션.sql" />
     <None Include="SQL2017\트리거.sql" />
+    <None Include="Demos\20161025_LogManager.sql" />
+    <None Include="Demos\20161025_Logs.sql" />
+    <None Include="Demos\20170611_OutputDemo.sql" />
+    <None Include="Demos\ExecPrint.sql" />
+    <None Include="Demos\SQL_Insert_MultiRowInsert_다중 행 입력하기.sql" />
+    <None Include="Demos\Users.sql" />
+    <None Include="Demos\만능_페이징_소팅.sql" />
+    <None Include="Demos\중복 데이터 가져오기.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />

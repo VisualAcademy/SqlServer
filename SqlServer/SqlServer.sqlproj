@@ -225,7 +225,7 @@
     <None Include="SQL2017\Select반환과OUTPUT반환과RETURN반환비교_SQL2008.txt" />
     <None Include="SQL2017\SQL Server에서 반드시 알아야 할 사항 10가지.txt" />
     <None Include="SQL2017\SQLCMD명령어사용법설명.txt" />
-    <None Include="PostgreSQL\01_PostgreSqlStart.sql" />
+    <None Include="PostgreSQL\01_PostgreSqlStart_IdeaApp.sql" />
     <None Include="Demos\SP\DeleteBoardAndData.sql" />
     <None Include="Demos2\00_00_SQL Server 2017 Developer 버전 다운로드 및 설치.txt" />
     <None Include="Demos2\01_01_SQL Server에서 반드시 알아야 할 사항 10가지 소개.txt" />
@@ -235,5 +235,6 @@
     <None Include="Demos2\08_11_저장프로시저예제1.txt" />
     <None Include="Demos2\08_12_저장프로시저예제2.txt" />
     <None Include="Demos2\08_14_Select반환과 OUTPUT반환과 RETURN반환 비교.txt" />
+    <None Include="PostgreSQL\02_Tables_Crud.sql" />
   </ItemGroup>
 </Project>

@@ -70,34 +70,29 @@
     <Folder Include="PostgreSQL" />
     <Folder Include="Demos\SP" />
     <Folder Include="Demos2" />
+    <Folder Include="Codes" />
+    <Folder Include="Codes\JoinNote" />
+    <Folder Include="Codes\JoinNote\_" />
+    <Folder Include="Codes\GroupByDemo" />
+    <Folder Include="Codes\GroupByDemo\_" />
+    <Folder Include="T-SQL" />
+    <Folder Include="Demos\Index" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demos\Videos\Videos.sql" />
     <None Include="Scripts\IfEvenOrOdd\_\06.If문.sql" />
     <None Include="Scripts\IfEvenOrOdd\_\If문.sql" />
     <None Include="SQL2017\00.테이블제약조건.sql" />
-    <None Include="SQL2017\01.GroupBy.sql" />
-    <None Include="SQL2017\01.Index.sql" />
     <None Include="SQL2017\01.SQL2008트랜잭션.sql" />
-    <None Include="SQL2017\01.매개변수사용저장프로시저예제1.sql" />
     <None Include="SQL2017\01.외래키제약조건_OnDeleteCascade.sql" />
-    <None Include="SQL2017\01.출력문.sql" />
     <None Include="SQL2017\02.MyDatabase.sql" />
-    <None Include="SQL2017\02.OUTPUT매개변수와RETURN사용저장프로시저예제2.sql" />
     <None Include="SQL2017\02.SQL2008트리거.sql" />
-    <None Include="SQL2017\02.주석문.sql" />
-    <None Include="SQL2017\03.데이터형식.sql" />
     <None Include="SQL2017\03.확장저장프로시저3.sql" />
     <None Include="SQL2017\03.활용예제_월별자동차판매리스트.sql" />
-    <None Include="SQL2017\04.변수.sql" />
     <None Include="SQL2017\04_40_MyDatabase.sql" />
-    <None Include="SQL2017\05.연산자.sql" />
-    <None Include="SQL2017\07.While문.sql" />
-    <None Include="SQL2017\08.날짜함수.sql" />
     <None Include="SQL2017\10_30_GroupBy절_Having절.sql" />
     <None Include="SQL2017\11.SQL Server 2005에서 반드시 알아야 할 사항%28처음부터끝까지).sql" />
     <None Include="SQL2017\13.SQL2005_6_SQL구문.sql" />
-    <None Include="SQL2017\16.SQL2005_조인_.sql" />
     <None Include="SQL2017\17.SQL2005_테이블제약조건.sql" />
     <None Include="SQL2017\18.SQL2005_저장프로시저_.sql" />
     <None Include="SQL2017\19.SQL2005_Categories테이블로저장프로시저연습.sql" />
@@ -109,8 +104,6 @@
     <None Include="SQL2017\BackupAndRestore1.sql" />
     <None Include="SQL2017\CASE 표현식.sql" />
     <None Include="SQL2017\GroupBy절_Having절.sql" />
-    <None Include="SQL2017\Index-CI.sql" />
-    <None Include="SQL2017\Index-NCI.sql" />
     <None Include="SQL2017\InsertIntoSelect절.sql" />
     <None Include="SQL2017\Join.sql" />
     <None Include="SQL2017\MarketSetup.sql" />
@@ -120,9 +113,7 @@
     <None Include="SQL2017\sp_help.sql" />
     <None Include="SQL2017\SP_OUTPUT.sql" />
     <None Include="SQL2017\SQL_UNION절과UNIONALL절비교.sql" />
-    <None Include="SQL2017\SQL2012_조인.sql" />
     <None Include="SQL2017\SqlRow_Number.sql" />
-    <None Include="SQL2017\SQL문1.sql" />
     <None Include="SQL2017\SQL문2.sql" />
     <None Include="SQL2017\SQL문3.sql" />
     <None Include="SQL2017\SQL문3_2.sql" />
@@ -161,7 +152,6 @@
     <None Include="Demos2\01_12_Schedule_SQL.sql" />
     <None Include="Demos2\02_03_MyDatabase.sql" />
     <None Include="Demos2\06_02_AttachFiles_01.sql" />
-    <None Include="Demos2\06_03_SQL문1.sql" />
     <None Include="Demos2\06_03_SQL문2.sql" />
     <None Include="Demos2\06_03_SQL문3.sql" />
     <None Include="Demos2\06_03_SQL문3_2.sql" />
@@ -197,6 +187,22 @@
     <None Include="Demos2\SignBases_ChatBases.sql" />
     <None Include="Demos2\TableCopy.sql" />
     <None Include="Demos2\데이터 가져오기_우편번호 데이터.sql" />
+    <None Include="Demos\SQL문1.sql" />
+    <None Include="Codes\JoinNote\_\16.SQL2005_조인_.sql" />
+    <None Include="Codes\JoinNote\_\SQL2012_조인.sql" />
+    <None Include="Codes\GroupByDemo\01.GroupBy.sql" />
+    <None Include="T-SQL\04.변수.sql" />
+    <None Include="T-SQL\05.연산자.sql" />
+    <None Include="T-SQL\07.While문.sql" />
+    <None Include="T-SQL\02.주석문.sql" />
+    <None Include="T-SQL\03.데이터형식.sql" />
+    <None Include="T-SQL\08.날짜함수.sql" />
+    <None Include="T-SQL\01.출력문.sql" />
+    <None Include="Demos\Index\01.Index.sql" />
+    <None Include="Demos\Index\Index-CI.sql" />
+    <None Include="Demos\Index\Index-NCI.sql" />
+    <None Include="Demos\SP\02.OUTPUT매개변수와RETURN사용저장프로시저예제2.sql" />
+    <None Include="Demos\SP\01.매개변수사용저장프로시저예제1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />
@@ -236,5 +242,7 @@
     <None Include="Demos2\08_12_저장프로시저예제2.txt" />
     <None Include="Demos2\08_14_Select반환과 OUTPUT반환과 RETURN반환 비교.txt" />
     <None Include="PostgreSQL\02_Tables_Crud.sql" />
+    <None Include="Codes\JoinNote\_\00.조인.txt" />
+    <None Include="SQL2017\테이블이름매개변수화.sql" />
   </ItemGroup>
 </Project>

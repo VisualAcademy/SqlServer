@@ -1,0 +1,131 @@
+-- 카테고리 테이블 설계
+Create Table dbo.Categories
+(
+	CategoryID Int Identity(1, 1) Not Null Primary Key, -- 카테고리번호
+	CategoryName VarChar(25) Not Null					-- 카테고리명
+)
+Go
+
+Insert Categories Values('가전')
+Go
+Insert Categories Values('컴퓨터')
+Go
+Insert Categories Values('서적')
+Go
+
+-- 상품 테이블 설계
+Create Table dbo.Products
+(
+	ProductID Int Identity(1, 1) Not Null Primary Key,	-- 상품 고유번호
+	ModelName VarChar(25) Not Null,						-- 상품명
+	SellPrice Int Null,									-- 가격
+	CategoryID Int Null									--카테고리(1,2,3)
+)	
+Go
+
+--[!] 외래키 따로 지정 : 외부에서
+Alter Table dbo.Products
+Add Foreign Key(CategoryID) References Categories(CategoryID)
+Go
+
+-- 가전, 냉장고, 100
+Insert Products Values('냉장고', 100, 1)
+Go
+-- 컴퓨터, 노트북, 200
+Insert Products Values('노트북', 200, 2)
+Go
+Insert Products Values('데스크톱', 150, 2)
+Go
+
+Select * From Categories
+Go
+Select * From Products
+Go
+Select ModelName, SellPrice From Products
+Go
+
+--상품평(코멘트) 테이블 설계
+Create Table dbo.Reviews
+(
+	ReviewID Int Identity(1, 1) Primary Key,		-- 일련번호
+	ProductID Int References Products(ProductID),	-- 외래키
+	Comment VarChar(3850)							-- 내용
+)
+Go
+Insert Into Reviews Values(1, '냉장실에서 얼음이 얼어요...')
+Insert Into Reviews values(2, '브랜드가 모닝글로리')
+
+-- 상품리스트 출력 : 카테고리명, 상품명, 판매가
+--[a] SQL Server 조인 구문
+Select ModelName, SellPrice, CategoryName
+From Products, Categories
+Where Products.CategoryID = Categories.CategoryID
+Go
+
+--[b] ANSI SQL 조인 구문
+Select ModelName, SellPrice, CategoryName
+From Products Join Categories 
+	On Products.CategoryID = Categories.CategoryID
+Go
+
+--[데모] 뷰 생성 마법사 사용
+SELECT     dbo.Products.ModelName, dbo.Products.SellPrice, dbo.Categories.CategoryName
+FROM         dbo.Categories INNER JOIN
+                      dbo.Products ON dbo.Categories.CategoryID = dbo.Products.CategoryID
+Go
+
+--[c] 조인 구문 상세 표현 : Join은 기본적으로 Inner Join이다. 
+Select 
+	Products.ModelName, 
+	Products.SellPrice, 
+	Categories.CategoryName,
+	Categories.CategoryID As [카테고리번호]
+From Products Inner Join Categories 
+On Products.CategoryID = Categories.CategoryID
+Go
+
+--[d] 조인 구문 축약 표현
+Select p.ModelName, p.SellPrice, c.CategoryName, c.CategoryID
+From Products p Join Categories c
+On p.CategoryID = c.CategoryID
+Go
+
+-- 서브 쿼리를 사용한 조인
+Select ModelName, SellPrice, CategoryID
+From Products
+Where CategoryID In (Select CategoryID From Categories)
+Go
+
+
+--[!] Inner Join과 Left Outer Join 비교
+--상품명, 코멘트
+-- 기본 조인(Inner Join)은 매치되는 결과만 가져온다. 데스크톱 누락
+Select p.ModelName, r.Comment 
+From Products p Inner Join Reviews r
+	On p.ProductID = r.ProductID
+Go
+-- Left Outer Join : 왼쪽 테이블의 모든 목록은 출력
+Select p.ModelName, r.Comment 
+From Products p LEFT OUTER Join Reviews r
+	On p.ProductID = r.ProductID
+Go
+
+-- 3개 테이블 조인
+-- 카테고리명, 상품명, 판매가, 코멘트
+Select c.CategoryName, p.ModelName, p.SellPrice, r.Comment
+From 
+	Categories c 
+		Join Products p
+			On c.CategoryID = p.CategoryID
+			Join Reviews r
+				On p.ProductID = r.ProductID
+Go
+
+Select c.CategoryName, p.ModelName, p.SellPrice, r.Comment
+From Categories c, Products p, Reviews r
+Where
+	c.CategoryID = p.CategoryID
+	And
+	p.ProductID = r.ProductID
+Go
+

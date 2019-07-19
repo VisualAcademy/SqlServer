@@ -77,6 +77,7 @@
     <Folder Include="Codes\GroupByDemo\_" />
     <Folder Include="T-SQL" />
     <Folder Include="Demos\Index" />
+    <Folder Include="00_Preface" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demos\Videos\Videos.sql" />
@@ -244,5 +245,7 @@
     <None Include="PostgreSQL\02_Tables_Crud.sql" />
     <None Include="Codes\JoinNote\_\00.조인.txt" />
     <None Include="SQL2017\테이블이름매개변수화.sql" />
+    <None Include="Demos\Index\02.인덱스_우편번호검색_.sql" />
+    <None Include="00_Preface\SQL Server 2000 커리큘럼.txt" />
   </ItemGroup>
 </Project>

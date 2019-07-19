@@ -1,3 +1,25 @@
+-- 연습용 테이블 생성
+Create Table Memos
+(
+	Num Int Identity(1, 1) Primary Key Not Null,
+	Name VarChar(25) Not Null,
+	Email VarChar(50) Null,
+	Title VarChar(150) Not Null,
+	PostDate DateTime Default(GetDate()),
+	PostIP VarChar(15) Null
+)
+Go
+
+
+Insert Into Memos(Name, Email, Title, PostDate, PostIP)
+Values('홍길동', 'h@h.com', '안녕하세요.', GetDate(), '127.0.0.1');
+
+Insert Into Memos(Name, Email, Title, PostDate, PostIP)
+Values('백두산', 'h@h.com', '안녕하세요.', GetDate(), '127.0.0.1');
+
+Select * From Memos;
+
+
 --[1] 2. SELECT(검색) 문
 --정의) Select FieldNameList From TableName [Where 조건] [Order By 정렬시킬필드명 [ASC | DESC]]
 

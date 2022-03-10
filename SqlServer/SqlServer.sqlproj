@@ -250,5 +250,6 @@
     <None Include="Demos\Index\02.인덱스_우편번호검색_.sql" />
     <None Include="00_Preface\SQL Server 2000 커리큘럼.txt" />
     <None Include="BuffetApp\Buffets.sql" />
+    <None Include="CreateTableAndAddColumnIfNotExists.sql" />
   </ItemGroup>
 </Project>

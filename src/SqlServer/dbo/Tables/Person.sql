@@ -1,4 +1,5 @@
-﻿CREATE TABLE Person
+﻿-- Create Person table
+CREATE TABLE Person
 (
     PersonId INT IDENTITY(1, 1) PRIMARY KEY,
     FirstName NVARCHAR(128) NOT NULL,

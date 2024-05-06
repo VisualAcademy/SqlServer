@@ -209,6 +209,7 @@
     <Build Include="dbo\Tables\Course.sql" />
     <Build Include="dbo\Tables\Person.sql" />
     <Build Include="dbo\Tables\Student.sql" />
+    <Build Include="dbo\Tables\Credit.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />

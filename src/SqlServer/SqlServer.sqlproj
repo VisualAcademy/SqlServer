@@ -206,6 +206,7 @@
     <None Include="Demos\Index\Index-NCI.sql" />
     <None Include="Demos\SP\02.OUTPUT매개변수와RETURN사용저장프로시저예제2.sql" />
     <None Include="Demos\SP\01.매개변수사용저장프로시저예제1.sql" />
+    <Build Include="dbo\Tables\Course.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />

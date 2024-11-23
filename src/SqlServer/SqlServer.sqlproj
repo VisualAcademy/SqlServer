@@ -211,6 +211,7 @@
     <Build Include="dbo\Tables\Student.sql" />
     <Build Include="dbo\Tables\Credit.sql" />
     <Build Include="dbo\Tables\Posts.sql" />
+    <Build Include="dbo\Tables\Cats.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SqlServer.publish.xml" />
